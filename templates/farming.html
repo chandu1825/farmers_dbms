@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Add Farming{% endblock %}
+{% block body %}
+<div class="container mt-5">
+  <h3>Add Farming Type</h3>
+  <form method="POST">
+    <input type="text" name="farming" class="form-control" placeholder="Farming Type"><br>
+    <button class="btn btn-success" type="submit">Add</button>
+  </form>
+</div>
+{% endblock %}

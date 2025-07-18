@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Farmer Register{% endblock %}
+{% block body %}
+<div class="container mt-5">
+  <h3>Register Farmer</h3>
+  <form method="POST">
+    <input name="farmername" class="form-control" placeholder="Farmer Name"><br>
+    <input name="adharnumber" class="form-control" placeholder="Aadhar Number"><br>
+    <input name="age" class="form-control" placeholder="Age" type="number"><br>
+    <input name="gender" class="form-control" placeholder="Gender"><br>
+    <input name="phonenumber" class="form-control" placeholder="Phone Number"><br>
+    <input name="address" class="form-control" placeholder="Address"><br>
+    <select name="farmingtype" class="form-control">
+      {% for farm in farming %}
+        <option value="{{ farm.farmingtype }}">{{ farm.farmingtype }}</option>
+      {% endfor %}
+    </select><br>
+    <button class="btn btn-success" type="submit">Register</button>
+  </form>
+</div>
+{% endblock %}

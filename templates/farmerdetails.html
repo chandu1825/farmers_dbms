@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Farmer Details{% endblock %}
+{% block body %}
+<div class="container mt-5">
+  <h3>Farmer Details</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Adhar</th><th>Age</th><th>Gender</th><th>Phone</th><th>Address</th><th>Farming</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in query %}
+      <tr>
+        <td>{{ row.rid }}</td>
+        <td>{{ row.farmername }}</td>
+        <td>{{ row.adharnumber }}</td>
+        <td>{{ row.age }}</td>
+        <td>{{ row.gender }}</td>
+        <td>{{ row.phonenumber }}</td>
+        <td>{{ row.address }}</td>
+        <td>{{ row.farming }}</td>
+        <td>
+          <a href="/edit/{{ row.rid }}" class="btn btn-warning btn-sm">Edit</a>
+          <a href="/delete/{{ row.rid }}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

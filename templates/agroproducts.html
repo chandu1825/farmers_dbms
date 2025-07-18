@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Agro Products{% endblock %}
+{% block body %}
+<div class="container mt-5">
+  <h3>Available Agro Products</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Product</th><th>Description</th><th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in query %}
+      <tr>
+        <td>{{ row.pid }}</td>
+        <td>{{ row.username }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.productname }}</td>
+        <td>{{ row.productdesc }}</td>
+        <td>{{ row.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
